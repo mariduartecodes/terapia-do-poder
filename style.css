@@ -260,9 +260,32 @@ footer a {
         transform: scale(1);
     }
     40% {
-        transform: scale(1.3); /* O ponto máximo da batida */
+        transform: scale(1.3);
     }
     100% {
-        transform: scale(1); /* Volta suavemente para o repouso */
+        transform: scale(1); 
     }
+}
+
+* {
+    box-sizing: border-box; /* Garante que as bordas não 'empurrem' o conteúdo pra fora */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+section, div, header, footer, main {
+    max-width: 100vw;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
