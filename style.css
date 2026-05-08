@@ -1,0 +1,268 @@
+html { scroll-behavior: smooth; }
+
+:root {
+    --forest-green: #1b3022;
+    --jurema-brown: #4e342e;
+    --ayahuasca-gold: #c5a059;
+    --leaf-green: #388e3c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #fdfaf5;
+    color: var(--forest-green);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.6;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(27, 48, 34, 0.95);
+    padding: 20px 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--ayahuasca-gold);
+}
+
+nav a {
+    color: var(--ayahuasca-gold);
+    text-decoration: none;
+    margin: 0 20px;
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+
+}
+
+nav a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--leaf-green);
+}
+
+section {
+    min-height: 100vh;
+    padding: 120px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#home {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('img/background.jpg');
+
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+#home h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: var(--ayahuasca-gold);
+    margin-bottom: 10px;
+}
+
+#tecnicas {
+    background-color: #eceff1;
+    }
+
+#tecnicas h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--leaf-green);
+    margin-bottom: 15px;
+}
+
+
+.grid-tecnicas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin-top: 40px;
+}
+
+.card {
+    position: relative;
+    height: 380px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    cursor: default;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card-title-permanent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: var(--ayahuasca-gold);
+    font-family: 'Cinzel', serif;
+    padding: 30px 10px 15px;
+    transition: 0.4s;
+
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(27, 48, 34, 0.92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.card:hover .card-img { transform: scale(1.1); }
+.card:hover .card-overlay { opacity: 1; transform: translateY(0); }
+.card:hover .card-title-permanent { opacity: 0; }
+
+.card-overlay h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--ayahuasca-gold);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.layout-info {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            text-align: left;
+        }
+
+.img-container img{
+    width: 100%;
+    max-width: 380px;
+    border-radius: 15px;
+    box-shadow: 15px 15px 0px var(--leaf-green);
+    object-fit: cover;
+}
+
+.info-texto h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    color: var(--leaf-green);
+    font-family: 'Cinzel', serif;
+}
+
+.info-texto p {
+    margin-bottom: 15px;
+    color: var(--jurema-brown);
+}
+
+#endereco {
+    background-color: #f0f4f1;
+}
+
+#contato {
+    background-color: var(--forest-green);
+    color: white;
+}
+
+.btn-agendar {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 45px;
+    background-color: var(--ayahuasca-gold);
+    color: var(--forest-green);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-agendar:hover {
+    background-color: white;
+    box-shadow: 0 0 15px var(--ayahuasca-gold);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--ayahuasca-gold);
+}
+
+ @media (max-width: 768px) {
+            .layout-info { 
+                flex-direction: column;
+                text-align: center;
+            }
+            .info-texto h2 {
+                text-align: center;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+        }
+
+
+footer {
+    background-color: #fdfaf5;
+    text-align: center;
+    width: 100%;
+    text-size: 0.3rem;
+}
+
+.texto-branco {
+    color: black;
+    font-style: italic;
+}
+
+.nome-rosa {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+footer a {
+    color: rgb(191, 6, 148);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.coracao-pulsante {
+    display: inline-block;
+    animation: pulsar 1s infinite ease-in-out; 
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+}
+
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(1.3); /* O ponto máximo da batida */
+    }
+    100% {
+        transform: scale(1); /* Volta suavemente para o repouso */
+    }
+}
