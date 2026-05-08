@@ -268,7 +268,7 @@ footer a {
 }
 
 * {
-    box-sizing: border-box; /* Garante que as bordas não 'empurrem' o conteúdo pra fora */
+    box-sizing: border-box; 
 }
 
 body {
@@ -288,4 +288,40 @@ section, div, header, footer, main {
 img {
     max-width: 100%;
     height: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        padding: 10px 5px;
+    }
+
+    nav a {
+        margin: 5px 8px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    #home h1 {
+        font-size: 2.2rem;
+    }
+
+    .layout-info { 
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-texto h2 {
+        text-align: center;
+    }
+
+    section, div, header, footer, main {
+        max-width: 100vw;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
 }
