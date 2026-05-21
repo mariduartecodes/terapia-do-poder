@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viva Lilás - Terapia do Poder</title>
 
+    <link rel="icon" type="image/png" href="img/logo.png">
+
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
 
 
@@ -14,13 +16,23 @@
 <body>
 
     <!-- Menu -->
-    <nav>
-        <a href="#home">Início</a>
-        <a href="#tecnicas">Técnicas</a>
-        <a href="#about">Sobre</a>
-        <a href="#endereco">O Espaço</a>
-        <a href="#contato">Agendamentos</a>
-    </nav>
+<nav class="navbar">
+  <div class="logo"></div>
+  
+  <button class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#tecnicas">Terapias</a></li>
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#endereco">Espaço</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
 
     <!-- Home -->
     <section id="home">
@@ -185,5 +197,15 @@
         <span class="coracao-pulsante">🖤</span>
     </p>
 </footer>
+
+    <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+  </script>
+
 </body>
 </html>
